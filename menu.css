@@ -35,6 +35,7 @@
   
   .menu {
     margin-top: 15px;
+    position: relative;
   }
   
   .menu > li {
@@ -46,24 +47,18 @@
     margin-right: 0;
   }
 
-  
-  .dropdown {
-    position: relative;
-  }
 
   
-  .features-menu {
+  .dropdown:hover .features-menu {    /* Тут раньше было `.features-menu` */
     position: absolute;
     
-    top: 1px;
-    left: 1px;
+    top: 10px;
+    left: 10px;
 
     flex-direction: column;
     background: #29fd2f;
     border-radius: 5px;
     padding-top: 60px;
-  
-  
   }
   
   .features-menu li {
@@ -71,10 +66,27 @@
     border-bottom: 1px solid #FFF;
     padding: 0 40px 10px 20px;
     margin: 10px;   
-    
   }
   
   .features-menu li:last-of-type {
     border-bottom: none;
   }
     
+  .dropdown {
+    position: relative;
+  }
+
+  .dropdown > span {
+    z-index: 2;
+    position: relative;  /* Это очень важно! */
+    cursor: pointer;
+  }
+    
+  .features-menu {
+    /* ... */
+    z-index: 1;
+  }
+
+  .features-menu {                    
+    display: none; /* Добавляем новое правило */
+  }
