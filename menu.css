@@ -52,13 +52,14 @@
   .dropdown:hover .features-menu {    /* Тут раньше было `.features-menu` */
     position: absolute;
     
-    top: 10px;
-    left: 10px;
+    top: 20px;
+    left: 5px;
 
     flex-direction: column;
     background: #29fd2f;
     border-radius: 5px;
     padding-top: 60px;
+    display: block;
   }
   
   .features-menu li {
